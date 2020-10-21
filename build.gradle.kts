@@ -16,26 +16,40 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test") {
-		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+//dependencies {
+//	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//	implementation("org.jetbrains.kotlin:kotlin-reflect")
+//	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//	developmentOnly("org.springframework.boot:spring-boot-devtools")
+//	runtimeOnly("org.postgresql:postgresql")
+//	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+//		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+//	}
+//}
+
+allprojects {
+	group = "com.greentower.hexagonal"
+	version = "0.0.1-SNAPSHOT"
+
+	tasks.withType<Test> {
+		useJUnitPlatform()
+	}
+
+	tasks.withType<KotlinCompile> {
+		kotlinOptions {
+			freeCompilerArgs = listOf("-Xjsr305=strict")
+			jvmTarget = "11"
+		}
 	}
 }
 
-tasks.withType<Test> {
-	useJUnitPlatform()
-}
+subprojects {
+	repositories {
+		mavenCentral()
+	}
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "11"
+	apply {
+		plugin("io.spring.dependency-management")
 	}
 }
