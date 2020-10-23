@@ -1,4 +1,4 @@
-package com.greentower.hexagonal
+package com.greentower.hexagonal.application
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
