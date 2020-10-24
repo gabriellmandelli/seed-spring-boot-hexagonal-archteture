@@ -1,10 +1,10 @@
 package com.greentower.hexagonal.infrastructure.memory
 
-import com.greentower.hexagonal.domain.domain.Localization
-import com.greentower.hexagonal.domain.spi.LocalizationRepository
+import com.greentower.hexagonal.domain.model.Localization
+import com.greentower.hexagonal.domain.spi.LocalizationPersistencePort
 import java.util.*
 
-class InMemoryLocalizationRepository : LocalizationRepository {
+class InMemoryLocalizationRepository : LocalizationPersistencePort {
 
     var localizationList : MutableList<Localization> = emptyList<Localization>() as MutableList<Localization>
 

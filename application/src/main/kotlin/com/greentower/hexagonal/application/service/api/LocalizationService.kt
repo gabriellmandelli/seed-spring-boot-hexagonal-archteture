@@ -1,9 +1,9 @@
-package com.greentower.hexagonal.domain.spi
+package com.greentower.hexagonal.application.service.api
 
-import com.greentower.hexagonal.domain.domain.Localization
+import com.greentower.hexagonal.domain.model.Localization
 import java.util.*
 
-interface LocalizationRepository {
+interface LocalizationService {
     fun add(localization: Localization) : Localization
 
     fun remove(localization: Localization)

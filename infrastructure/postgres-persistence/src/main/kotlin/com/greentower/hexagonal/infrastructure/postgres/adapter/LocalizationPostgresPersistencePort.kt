@@ -1,12 +1,12 @@
-package com.greentower.hexagonal.infrastructure.postgres.repository
+package com.greentower.hexagonal.infrastructure.postgres.adapter
 
-
-import com.greentower.hexagonal.domain.domain.Localization
-import com.greentower.hexagonal.domain.spi.LocalizationRepository
+import com.greentower.hexagonal.domain.model.Localization
+import com.greentower.hexagonal.domain.spi.LocalizationPersistencePort
 import com.greentower.hexagonal.infrastructure.postgres.entity.LocalizationEntity
+import com.greentower.hexagonal.infrastructure.postgres.repository.LocalizationJpaRepository
 import java.util.*
 
-class LocalizationPostgresRepository(private var repository: LocalizationJpaRepository) : LocalizationRepository {
+class LocalizationPostgresPersistencePort(private var repository: LocalizationJpaRepository) : LocalizationPersistencePort {
 
     override fun add(localization: Localization) : Localization {
         val localizationDB = repository.save(LocalizationEntity(localization))

@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    implementation("org.springframework:spring-context")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }

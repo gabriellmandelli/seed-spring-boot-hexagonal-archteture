@@ -1,6 +1,6 @@
 package com.greentower.hexagonal.infrastructure.postgres.entity
 
-import com.greentower.hexagonal.domain.domain.Localization
+import com.greentower.hexagonal.domain.model.Localization
 import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -16,7 +16,7 @@ class LocalizationEntity {
     var latitude = 0.0
     var description = ""
 
-    constructor(localization :Localization):this(){
+    constructor(localization : Localization):this(){
         this.id = localization.id
         this.longitude = localization.longitude
         this.latitude = localization.latitude

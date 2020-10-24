@@ -31,14 +31,6 @@ allprojects {
 			freeCompilerArgs = listOf("-Xjsr305=strict")
 			jvmTarget = "11"
 		}
-//		dependencies {
-//			implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//			runtimeOnly("org.postgresql:postgresql")
-//			developmentOnly("org.springframework.boot:spring-boot-devtools")
-//			testImplementation("org.springframework.boot:spring-boot-starter-test") {
-//				exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
-//			}
-//		}
 	}
 }
 

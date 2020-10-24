@@ -1,4 +1,4 @@
-package com.greentower.hexagonal.domain.domain
+package com.greentower.hexagonal.domain.model
 
 import java.util.*
 
